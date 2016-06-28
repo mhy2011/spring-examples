@@ -16,4 +16,14 @@
 		<property name="id" value="10"></property>
 		<property name="name" value="张三"></property>
 	</bean>
+	
+	<bean class="com.mhy.model.Person">
+		<property name="id" value="5"/>
+	</bean>
+	<bean class="com.mhy.model.Person">
+		<property name="id" value="15"/>
+	</bean>
+	<bean class="com.mhy.model.Person">
+		<property name="id" value="25"/>
+	</bean>
 </beans>
