@@ -26,4 +26,11 @@
 	<bean class="com.mhy.model.Person">
 		<property name="id" value="25"/>
 	</bean>
+	
+	<!-- 依赖注入——属性注入（Setter方法注入） -->
+	<bean id="goods" class="com.mhy.model.Goods">
+		<property name="id" value="100"/>
+		<property name="name" value="滴滴打车券"/>
+		<property name="price" value="12.34"/>
+	</bean>
 </beans>
