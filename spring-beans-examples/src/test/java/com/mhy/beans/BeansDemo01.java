@@ -45,4 +45,28 @@ public class BeansDemo01 {
 		System.out.println(goods);
 		ctx.close();
 	}
+	
+	@Test
+	public void test04(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Goods goods = ctx.getBean("g2", Goods.class);
+		System.out.println(goods);
+		ctx.close();
+	}
+	
+	@Test
+	public void test05(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Goods goods = ctx.getBean("g3", Goods.class);
+		System.out.println(goods);
+		ctx.close();
+	}
+	
+	@Test
+	public void test06(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Goods goods = ctx.getBean("g4", Goods.class);
+		System.out.println(goods);
+		ctx.close();
+	}
 }

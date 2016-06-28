@@ -33,4 +33,23 @@
 		<property name="name" value="滴滴打车券"/>
 		<property name="price" value="12.34"/>
 	</bean>
+	
+	<!-- 依赖注入——构造方法注入 -->
+	<bean id="g2" class="com.mhy.model.Goods">
+		<constructor-arg type="int" value="10"></constructor-arg>
+		<constructor-arg type="java.lang.String" value="测试商品名称2"></constructor-arg>
+		<constructor-arg type="double" value="12.34"></constructor-arg>
+	</bean>
+	
+	<bean id="g3" class="com.mhy.model.Goods">
+		<constructor-arg index="0" value="10"></constructor-arg>
+		<constructor-arg index="1" value="12.34"></constructor-arg>
+		<constructor-arg index="2" value="测试商品名称3"></constructor-arg>
+	</bean>
+	
+	<bean id="g4" class="com.mhy.model.Goods">
+		<constructor-arg index="0" type="int" value="10"></constructor-arg>
+		<constructor-arg index="1" type="java.lang.String" value="测试商品名称4"></constructor-arg>
+		<constructor-arg index="2" type="double" value="12.34"></constructor-arg>
+	</bean>
 </beans>

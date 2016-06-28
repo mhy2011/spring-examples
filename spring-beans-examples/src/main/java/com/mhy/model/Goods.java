@@ -18,7 +18,21 @@ public class Goods {
 	public Goods() {
 		super();
 	}
+	
+	public Goods(int id, String name, double price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
 
+	public Goods(int id, double price, String name) {
+		super();
+		this.id = id;
+//		this.name = name;
+		this.price = price;
+	}
+	
 	public int getId() {
 		return id;
 	}
