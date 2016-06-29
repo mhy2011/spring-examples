@@ -55,5 +55,14 @@
 	<bean id="g5" class="com.mhy.model.Goods">
 		<property name="name"><value><![CDATA[测试商品&测试商品]]></value></property>
 	</bean>
+	<!-- 内部Bean -->
+	<bean id="person2" class="com.mhy.model.Person">
+		<property name="country">
+			<bean class="com.mhy.model.Country">
+				<property name="id" value="1"/>
+				<property name="name" value="中国"/>
+			</bean>
+		</property>
+	</bean>
 	
 </beans>

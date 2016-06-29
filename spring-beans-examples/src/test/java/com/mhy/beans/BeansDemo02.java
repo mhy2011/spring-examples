@@ -34,5 +34,13 @@ public class BeansDemo02 {
 		System.out.println(p2.getCountry());
 		ctx.close();
 	}
+	
+	@Test
+	public void test03() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Person person = ctx.getBean("person2", Person.class);
+		System.out.println(person.getCountry());
+		ctx.close();
+	}
 
 }
