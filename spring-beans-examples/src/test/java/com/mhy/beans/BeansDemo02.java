@@ -3,11 +3,15 @@
  */
 package com.mhy.beans;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.mhy.model.Course;
 import com.mhy.model.Goods;
 import com.mhy.model.Person;
+import com.mhy.model.Student;
 
 /**
  * @author mahaiyuan
@@ -43,4 +47,24 @@ public class BeansDemo02 {
 		ctx.close();
 	}
 
+	@Test
+	public void test04() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Student student = ctx.getBean("student", Student.class);
+		System.out.println(student.getHobbies());
+		ctx.close();
+	}
+	
+	@Test
+	public void test05() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Student student = ctx.getBean("student2", Student.class);
+		List<Course> courses = student.getCourses();
+		if(null != courses && courses.size() > 0){
+			for(Course c : courses){
+				System.out.println(c);
+			}
+		}
+		ctx.close();
+	}
 }

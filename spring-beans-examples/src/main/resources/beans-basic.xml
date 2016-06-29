@@ -65,4 +65,30 @@
 		</property>
 	</bean>
 	
+	<bean id="student" class="com.mhy.model.Student">
+		<property name="name" value="admin"/>
+		<property name="hobbies">
+			<list>
+				<value>读书</value>
+				<value>电影</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="course" class="com.mhy.model.Course">
+		<property name="name" value="高等数学"></property>
+	</bean>
+	<bean id="course2" class="com.mhy.model.Course">
+		<property name="name" value="离散数学"></property>
+	</bean>
+	<bean id="student2" class="com.mhy.model.Student">
+		<property name="name" value="admin"/>
+		<property name="courses">
+			<list>
+				<ref bean="course"/>
+				<ref bean="course2"/>
+			</list>
+		</property>
+	</bean>
+	
 </beans>
