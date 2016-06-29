@@ -52,4 +52,8 @@
 		<constructor-arg index="1" type="java.lang.String" value="测试商品名称4"></constructor-arg>
 		<constructor-arg index="2" type="double" value="12.34"></constructor-arg>
 	</bean>
+	<bean id="g5" class="com.mhy.model.Goods">
+		<property name="name"><value><![CDATA[测试商品&测试商品]]></value></property>
+	</bean>
+	
 </beans>

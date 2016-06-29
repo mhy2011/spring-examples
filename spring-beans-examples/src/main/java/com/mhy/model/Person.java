@@ -16,6 +16,7 @@ public class Person {
 	private String name; // 姓名
 	private String gender; // 性别
 	private Date birthday; // 出生日期
+	private Country country;	//所属国家
 
 	public Person() {
 		super();
@@ -56,6 +57,14 @@ public class Person {
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", name=" + name + ", gender=" + gender + ", birthday=" + birthday + "]";
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 
 }
