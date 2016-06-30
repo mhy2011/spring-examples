@@ -3,7 +3,9 @@
  */
 package com.mhy.beans;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -63,6 +65,34 @@ public class BeansDemo02 {
 		if(null != courses && courses.size() > 0){
 			for(Course c : courses){
 				System.out.println(c);
+			}
+		}
+		ctx.close();
+	}
+	
+	@Test
+	public void test06() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Student student = ctx.getBean("student3", Student.class);
+		Set<String> likes = student.getLikes();
+		if(null != likes){
+			Iterator<String> it = likes.iterator();
+			while(it.hasNext()){
+				System.out.println(it.next());
+			}
+		}
+		ctx.close();
+	}
+	
+	@Test
+	public void test07() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Student student = ctx.getBean("student4", Student.class);
+		Set<Course> lovedCourses = student.getLovedCourses();
+		if(null != lovedCourses){
+			Iterator<Course> it = lovedCourses.iterator();
+			while(it.hasNext()){
+				System.out.println(it.next());
 			}
 		}
 		ctx.close();

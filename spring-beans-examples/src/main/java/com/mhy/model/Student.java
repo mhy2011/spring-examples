@@ -4,7 +4,9 @@
 package com.mhy.model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author mahaiyuan
@@ -16,6 +18,8 @@ public class Student {
 	private String name;
 	private List<String> hobbies = new ArrayList<String>();
 	private List<Course> courses = new ArrayList<Course>();
+	private Set<String> likes = new HashSet<String>();
+	private Set<Course> lovedCourses = new HashSet<Course>();	//喜欢的课程
 
 	public int getId() {
 		return id;
@@ -52,6 +56,22 @@ public class Student {
 
 	public void setCourses(List<Course> courses) {
 		this.courses = courses;
+	}
+
+	public Set<String> getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Set<String> likes) {
+		this.likes = likes;
+	}
+
+	public Set<Course> getLovedCourses() {
+		return lovedCourses;
+	}
+
+	public void setLovedCourses(Set<Course> lovedCourses) {
+		this.lovedCourses = lovedCourses;
 	}
 
 }
