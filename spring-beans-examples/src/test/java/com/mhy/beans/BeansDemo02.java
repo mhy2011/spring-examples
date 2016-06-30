@@ -107,4 +107,30 @@ public class BeansDemo02 {
 		System.out.println(scores);
 		ctx.close();
 	}
+	
+	@Test
+	public void test09() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Person p = ctx.getBean("p9", Person.class);
+		System.out.println(p);
+		ctx.close();
+	}
+	
+	@Test
+	public void test10() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Person p = ctx.getBean("p10", Person.class);
+		System.out.println(p);
+		System.out.println(p.getCountry());
+		ctx.close();
+	}
+	
+	@Test
+	public void test11() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Person p = ctx.getBean("p11", Person.class);
+		System.out.println(p);
+		System.out.println(p.getCountry());
+		ctx.close();
+	}
 }

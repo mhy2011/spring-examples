@@ -10,7 +10,7 @@
 	http://www.springframework.org/schema/tx
  	http://www.springframework.org/schema/tx/spring-tx.xsd
  	http://www.springframework.org/schema/aop
- 	http://www.springframework.org/schema/aop/spring-aop.xsd">
+ 	http://www.springframework.org/schema/aop/spring-aop.xsd" default-autowire="byName">
 
 	<bean id="person" class="com.mhy.model.Person">
 		<property name="id" value="10"></property>
@@ -121,4 +121,16 @@
 		</property>
 	</bean>
 	
+	<bean id="p9" class="com.mhy.model.Person" 
+		p:id="10" p:name="张三"/>
+	
+	<bean id="country" class="com.mhy.model.Country" 
+		p:id="1" p:name="中国"/>
+	<bean id="country2" class="com.mhy.model.Country" 
+		p:id="2" p:name="美国"/>
+	<bean id="p10" class="com.mhy.model.Person" 
+		p:id="10" p:name="张三" p:country-ref="country"/>
+		
+	<bean id="p11" class="com.mhy.model.Person" 
+		p:id="10" p:name="张三" autowire="byType"/>
 </beans>
