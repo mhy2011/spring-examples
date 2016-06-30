@@ -54,10 +54,10 @@ public class Person {
 		this.birthday = birthday;
 	}
 
-	@Override
-	public String toString() {
-		return "Person [id=" + id + ", name=" + name + ", gender=" + gender + ", birthday=" + birthday + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Person [id=" + id + ", name=" + name + ", gender=" + gender + ", birthday=" + birthday + "]";
+//	}
 
 	public Country getCountry() {
 		return country;
