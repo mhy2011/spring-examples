@@ -111,4 +111,14 @@
 		</property>
 	</bean>
 	
+	<bean id="student5" class="com.mhy.model.Student">
+		<property name="name" value="admin"/>
+		<property name="scores">
+			<map>
+				<entry key="math" value="99"/>
+				<entry key="english" value="80"/>
+			</map>
+		</property>
+	</bean>
+	
 </beans>

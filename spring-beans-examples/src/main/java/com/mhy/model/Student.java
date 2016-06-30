@@ -4,8 +4,10 @@
 package com.mhy.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -20,6 +22,7 @@ public class Student {
 	private List<Course> courses = new ArrayList<Course>();
 	private Set<String> likes = new HashSet<String>();
 	private Set<Course> lovedCourses = new HashSet<Course>();	//喜欢的课程
+	private Map<String, Double> scores = new HashMap<String, Double>();
 
 	public int getId() {
 		return id;
@@ -72,6 +75,14 @@ public class Student {
 
 	public void setLovedCourses(Set<Course> lovedCourses) {
 		this.lovedCourses = lovedCourses;
+	}
+
+	public Map<String, Double> getScores() {
+		return scores;
+	}
+
+	public void setScores(Map<String, Double> scores) {
+		this.scores = scores;
 	}
 
 }

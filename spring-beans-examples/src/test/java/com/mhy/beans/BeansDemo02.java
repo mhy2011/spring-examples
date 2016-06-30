@@ -5,6 +5,7 @@ package com.mhy.beans;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.junit.Test;
@@ -95,6 +96,15 @@ public class BeansDemo02 {
 				System.out.println(it.next());
 			}
 		}
+		ctx.close();
+	}
+	
+	@Test
+	public void test08() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans-basic.xml");
+		Student student = ctx.getBean("student5", Student.class);
+		Map<String, Double> scores = student.getScores();
+		System.out.println(scores);
 		ctx.close();
 	}
 }
