@@ -23,4 +23,8 @@
  		p:proxyInterfaces="com.mhy.aop.service.WaiterService" 
  		p:interceptorNames="greetingAfterAdvice" p:target-ref="target"/>
  	
+ 	<bean id="greetingAdvice" class="com.mhy.aop.advice.GreetingInterceptor"/>
+ 	<bean id="waiterService3" class="org.springframework.aop.framework.ProxyFactoryBean" 
+ 		p:proxyInterfaces="com.mhy.aop.service.WaiterService" 
+ 		p:interceptorNames="greetingAdvice" p:target-ref="target"/>
 </beans>
