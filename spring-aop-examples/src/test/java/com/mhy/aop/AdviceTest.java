@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.mhy.aop.advice.GreetingAfterAdvice;
 import com.mhy.aop.advice.GreetingBeforeAdvice;
 import com.mhy.aop.service.WaiterService;
 import com.mhy.aop.service.impl.WaiterServiceImpl;
@@ -33,6 +34,25 @@ public class AdviceTest {
 	public void testMethodBeforeAdvice2(){
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("advice-beans.xml");
 		WaiterService service = ctx.getBean("waiterService", WaiterService.class);
+		service.greetTo("李四");
+		ctx.close();
+	}
+	
+	//后置增强测试
+	@Test
+	public void testAfterReturningAdvice(){
+		ProxyFactory pf = new ProxyFactory();	//代理工厂
+		pf.setTarget(new WaiterServiceImpl());	//设置代理目标
+		pf.addAdvice(new GreetingAfterAdvice());	//添加增强
+		WaiterService service = (WaiterService) pf.getProxy();	//生成代理实例
+		service.greetTo("张三");
+	}
+	
+	//后置增强测试
+	@Test
+	public void testAfterReturningAdvice2(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("advice-beans.xml");
+		WaiterService service = ctx.getBean("waiterService2", WaiterService.class);
 		service.greetTo("李四");
 		ctx.close();
 	}
