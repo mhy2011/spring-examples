@@ -31,4 +31,10 @@
 	<bean id="txManager" class="com.mhy.aop.advice.TransactionManager"/>
  	<bean id="waiterService4" class="org.springframework.aop.framework.ProxyFactoryBean" 
  		p:interceptorNames="txManager" p:target-ref="target" p:proxyTargetClass="true"/>
+ 		
+ 	<!-- 引介增强示例 -->
+ 	<bean id="pmonitor" class="com.mhy.aop.advice.ControllablePerformanceMonitor"/>
+ 	<bean id="waiterService5" class="org.springframework.aop.framework.ProxyFactoryBean" 
+ 		p:interfaces="com.mhy.aop.advice.Monitorable" 
+ 		p:interceptorNames="pmonitor" p:target-ref="target" p:proxyTargetClass="true"/>
 </beans>

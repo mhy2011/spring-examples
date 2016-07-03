@@ -12,6 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.mhy.aop.advice.GreetingAfterAdvice;
 import com.mhy.aop.advice.GreetingBeforeAdvice;
 import com.mhy.aop.advice.GreetingInterceptor;
+import com.mhy.aop.advice.Monitorable;
 import com.mhy.aop.service.WaiterService;
 import com.mhy.aop.service.impl.WaiterServiceImpl;
 
@@ -89,6 +90,19 @@ public class AdviceTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		ctx.close();
+	}
+	
+	//引介增强测试
+	@Test
+	public void testDelegatingIntroductionInterceptor(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("advice-beans.xml");
+		WaiterService service = ctx.getBean("waiterService5", WaiterService.class);
+		service.greetTo("张三");
+		
+		Monitorable monitorable = (Monitorable) service;	//开启性能监控
+		monitorable.setMonitorActive(true);
+		service.greetTo("李四");
 		ctx.close();
 	}
 }
