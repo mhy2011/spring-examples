@@ -3,6 +3,8 @@
  */
 package com.mhy.aop;
 
+import java.sql.SQLException;
+
 import org.junit.Test;
 import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -74,6 +76,19 @@ public class AdviceTest {
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("advice-beans.xml");
 		WaiterService service = ctx.getBean("waiterService3", WaiterService.class);
 		service.greetTo("李四");
+		ctx.close();
+	}
+	
+	//异常抛出增强测试
+	@Test
+	public void testThrowsAdvice(){
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("advice-beans.xml");
+		WaiterService service = ctx.getBean("waiterService4", WaiterService.class);
+		try {
+			service.addWaiter("张三");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		ctx.close();
 	}
 }

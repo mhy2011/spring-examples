@@ -27,4 +27,8 @@
  	<bean id="waiterService3" class="org.springframework.aop.framework.ProxyFactoryBean" 
  		p:proxyInterfaces="com.mhy.aop.service.WaiterService" 
  		p:interceptorNames="greetingAdvice" p:target-ref="target"/>
+ 	
+	<bean id="txManager" class="com.mhy.aop.advice.TransactionManager"/>
+ 	<bean id="waiterService4" class="org.springframework.aop.framework.ProxyFactoryBean" 
+ 		p:interceptorNames="txManager" p:target-ref="target" p:proxyTargetClass="true"/>
 </beans>
