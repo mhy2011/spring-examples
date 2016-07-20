@@ -31,6 +31,9 @@ public class GoodsService {
   public int saveGoods(Goods goods){
     int num = goodsMapper.insert(goods);  //保存商品信息
 
+    if (num > 0){
+      throw new RuntimeException("模拟出现异常情况......");
+    }
     SysLog sysLog = new SysLog();
     sysLog.setOperateType(DbOperatorType.INSERT.getName());
     sysLog.setMethod("GoodsService.saveGoods");

@@ -24,7 +24,7 @@ public class GoodsServiceTest extends BaseTest {
   public void testSaveGoods(){
     Goods goods = new Goods();
     goods.setPrice(123D);
-    goods.setName("测试商品");
+    goods.setName("测试商品02");
     goods.setStartTime(new Date());
     int num = goodsService.saveGoods(goods);
     Assert.assertEquals(1, num);
