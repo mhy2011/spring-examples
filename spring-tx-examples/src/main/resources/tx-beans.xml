@@ -12,6 +12,9 @@
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <!-- 自动包扫描 -->
+    <context:component-scan base-package="com.mhy.service"/>
+
 	<!-- C3P0数据源配置 -->
 	<context:property-placeholder location="classpath:init.properties" />
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
