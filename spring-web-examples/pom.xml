@@ -6,11 +6,16 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>spring-mvc-examples</artifactId>
+    <artifactId>spring-web-examples</artifactId>
     <packaging>war</packaging>
-    <name>spring-mvc-examples Maven Webapp</name>
+    <name>spring-web-examples Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.3.2.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -30,13 +35,16 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>spring-mvc-examples</finalName>
+        <finalName>spring-web-examples</finalName>
         <plugins>
             <!-- jetty plugin -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.3.10.v20160621</version>
+                <configuration>
+                    <scanIntervalSeconds>5</scanIntervalSeconds>
+                </configuration>
             </plugin>
         </plugins>
     </build>
