@@ -150,6 +150,5 @@
 		<module>spring-tx-examples</module>
 		<module>spring-integration-examples</module>
 		<module>spring-web-examples</module>
-		<module>spring-quartz-examples</module>
 	</modules>
 </project>
