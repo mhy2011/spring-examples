@@ -27,4 +27,14 @@ public class AdvisorTest {
     System.out.println("====================");
     seller.greetTo("王五");
   }
+
+  @Test
+  public void testRegexpMethodPointcutAdvisor() {
+    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:advisor-beans.xml");
+    Waiter waiter = context.getBean("waiter2", Waiter.class);
+    System.out.printf("waiter:%s\n", waiter);
+    waiter.greetTo("张三");
+    System.out.println("====================");
+    waiter.serveTo("李四");
+  }
 }
