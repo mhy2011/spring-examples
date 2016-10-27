@@ -13,7 +13,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<springframework.version>4.3.0.RELEASE</springframework.version>
+		<springframework.version>4.3.2.RELEASE</springframework.version>
 		<aspectj.version>1.8.9</aspectj.version>
 	</properties>
 

@@ -3,13 +3,9 @@ package com.mhy.web.controller;
 import com.mhy.model.Student;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.FileCopyUtils;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 /**
  * @author mahaiyuan
@@ -38,5 +34,12 @@ public class StudentController {
     student.setName("张三");
     student.setStuNo("20160010001");
     return student;
+  }
+
+  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+  public String getUser(@PathVariable(value = "id") int id, ModelMap map) {
+    map.addAttribute("id", id);
+    map.addAttribute("name", "张三");
+    return "student/detail";
   }
 }
