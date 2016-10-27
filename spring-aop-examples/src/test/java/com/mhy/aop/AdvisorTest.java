@@ -37,4 +37,20 @@ public class AdvisorTest {
     System.out.println("====================");
     waiter.serveTo("李四");
   }
+
+
+  @Test
+  public void testDynamicAdvisor() {
+    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:advisor-beans.xml");
+    Waiter waiter = context.getBean("waiter3", Waiter.class);
+    System.out.printf("waiter:%s\n", waiter);
+    waiter.greetTo("赵一");
+    System.out.println("====================");
+    waiter.greetTo("钱二");
+    System.out.println("====================");
+    waiter.greetTo("张三");
+    System.out.println("====================");
+    waiter.greetTo("李四");
+    System.out.println("====================");
+  }
 }

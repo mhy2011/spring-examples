@@ -38,4 +38,11 @@
   <bean id="waiter2" class="org.springframework.aop.framework.ProxyFactoryBean"
         p:interceptorNames="regexpAdvisor" p:proxyTargetClass="true" p:target-ref="waiterTarget"/>
 
+  <!-- 动态切面 -->
+  <bean id="greetingDynamicPointcut" class="com.mhy.aop.pointcut.GreetingDynamicPointcut"/>
+  <bean id="dynamicAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor"
+        p:pointcut-ref="greetingDynamicPointcut" p:advice-ref="greetingBeforAdvice"/>
+  <bean id="waiter3" class="org.springframework.aop.framework.ProxyFactoryBean"
+        p:interceptorNames="dynamicAdvisor" p:proxyTargetClass="true" p:target-ref="waiterTarget"/>
+
 </beans>
